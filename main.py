@@ -39,7 +39,7 @@ def lenet5_predict():
 
         image = cv2.imread('temp.png')
         image = cv2.resize(image, (32, 32))
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
         prediction = model.predict(np.expand_dims(image, axis=0))
         print(prediction.argmax())
